@@ -189,14 +189,17 @@ public class Snippets {
         input = Snippets.getRegex("the quick brown fox jumps over the lazy dog", "brown (.*) the", 1);   // 5 
         System.out.println ("Snippets.getRegex: " + input);
         
-        org.dom4j.Document dom = Snippets.getDom4JDoc("<?xml version=\"1.0\"?><test2><a><b u=\"hell\" t=\"world\" /></a></test2>");  // 7)
+        org.dom4j.Document dom = Snippets.getDom4JDoc("<?xml version=\"1.0\"?><test2><a><b u=\"hell\" t=\"world\" /></a></test2>");// 7)
         doc.getRootElement().addContent(new Element ("Bob"));
         
-        input = Snippets.getXpath(dom.getRootElement(), "//b/@t");
+        input = Snippets.getXpath(dom.getRootElement(), "//b/@t");  // 6
         System.out.println ("Snippets.getXpath: " + input);
         
         input = Snippets.formatDom4JDoc(dom, "  ", true);       // 8)
         System.out.println ("Snippets.formatDom4JDoc: " + input);
+        
+        Properties properties = Snippets.getProperties("/org/bobmarks/simple/test.properties");   // 9
+        System.out.println ("Snippets.getProperties: " + properties.getProperty("key2"));   
         
         file.delete();
     }

@@ -6,5 +6,39 @@
 	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar"/>
 	<classpathentry kind="lib" path="lib/saxpath-1.0-FCS.jar"/>
 	<classpathentry kind="lib" path="lib/jaxen-full-1.0-FCS.jar"/>
+	<classpathentry kind="lib" path="lib/springsource/org.springframework.aop-3.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/springsource/org.springframework.asm-3.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/springsource/org.springframework.beans-3.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/springsource/org.springframework.context-3.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/springsource/org.springframework.core-3.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/springsource/org.springframework.expression-3.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/springsource/org.springframework.jdbc-3.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/springsource/org.springframework.orm-3.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/springsource/org.springframework.oxm-3.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/springsource/org.springframework.test-3.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/springsource/org.springframework.transaction-3.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/springsource/org.springframework.web-3.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/springsource/org.springframework.web.servlet-3.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/mybatis/asm-3.3.1.jar"/>
+	<classpathentry kind="lib" path="lib/mybatis/cglib-2.2.2.jar"/>
+	<classpathentry kind="lib" path="lib/mybatis/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/mybatis/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="lib/mybatis/mybatis-3.1.1-sources.jar"/>
+	<classpathentry kind="lib" path="lib/mybatis/mybatis-3.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/mybatis/slf4j-api-1.6.2.jar"/>
+	<classpathentry kind="lib" path="lib/mybatis/slf4j-log4j12-1.6.2.jar"/>
+	<classpathentry kind="lib" path="lib/jdbc/mysql-connector-java-5.1.19-bin.jar"/>
+	<classpathentry kind="lib" path="lib/jdbc/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate/antlr-2.7.7.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate/hibernate-commons-annotations-4.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate/hibernate-core-4.1.5.Final.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate/javassist-3.15.0-GA.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate/jboss-logging-3.1.0.GA.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate/jboss-transaction-api_1.1_spec-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="lib/freemarker/freemarker2.3.19.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

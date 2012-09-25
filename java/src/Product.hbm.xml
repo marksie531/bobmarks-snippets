@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class name="org.bobmarks.hibernate.Product"  table="PRODUCTS">
+        <id name="id" column="PROD_ID">
+            <generator class="increment"/>
+        </id>        
+        <property name="name" column="PROD_NAME"/>
+        <property name="description" column="PROD_DESCRIPTION"/>
+        <property name="price" column="PROD_PRICE"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<ehcache>
+	<cache name="firstcache" 
+	       maxElementsInMemory="10000" 
+	       eternal="false" 
+	       overflowToDisk="true" 
+	       timeToIdleSeconds="0" 
+	       timeToLiveSeconds="0" 
+	       diskPersistent="true" 
+	       diskExpiryThreadIntervalSeconds="120"/>
+
+</ehcache>

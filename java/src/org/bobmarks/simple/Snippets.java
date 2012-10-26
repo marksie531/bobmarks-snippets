@@ -45,6 +45,8 @@ import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
 import org.jdom.output.XMLOutputter;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 /**
  * Collection of snippets.
@@ -213,11 +215,35 @@ public class Snippets {
     }
     
     /**
+     * 12) Return a JSon object from a String.
+     * 
+     * @param input
+     * @return
+     * @throws ParseException
+     */
+    public static JSONObject getJson (String input) throws org.json.simple.parser.ParseException {
+    	JSONParser parser = new JSONParser();
+        return (JSONObject) parser.parse(input);
+    }
+
+    /**
+     * 13) Format a String from a Json object.
+     * 
+     * @param input
+     * @return
+     * @throws ParseException
+     */
+    public static String formatJson (JSONObject input) {
+    	return input.toJSONString();
+    }    
+    
+    /**
      * Main method to test snippets.
      * 
      * @param args
      */
-    public static void main (String [] args) throws Exception {
+    @SuppressWarnings("unchecked")
+	public static void main (String [] args) throws Exception {
         File file = new File ("test_file.txt");
         
         Snippets.writeFile(file, "random text");        // 2)
@@ -252,6 +278,13 @@ public class Snippets {
         
         Date date = Snippets.parseDate(dateAsString, format);                   // 11
         System.out.println ("Snippets.parseDate: " + date);
+        
+        input = "{\"hello\": {\"extra\":\"stuff\"},\"messages\":[\"msg 1\",\"msg 2\",\"msg 3\"]}";
+		JSONObject jsonObj = Snippets.getJson (input);						// 12
+		System.out.println ("Snippets.getJson: " + jsonObj);
+		
+		jsonObj.put("new", "thing");
+		System.out.println ("Snippets.formatJson: " + Snippets.formatJson(jsonObj));		// 13
         
         file.delete();
     }

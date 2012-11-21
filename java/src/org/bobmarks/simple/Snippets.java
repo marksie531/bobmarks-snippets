@@ -26,6 +26,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.text.ParseException;
@@ -238,6 +239,26 @@ public class Snippets {
     }    
     
     /**
+     * Read a resource into a String.
+     * 
+     * @param resource
+     * @return
+     */
+    public static String readResource (String resource) throws IOException {
+        InputStream is = Snippets.class.getResourceAsStream (resource);
+        BufferedReader br = new BufferedReader(new InputStreamReader (is));
+        StringBuilder sb = new StringBuilder();
+        String nextLine = null;        
+        while ((nextLine = br.readLine()) != null) {
+            if(sb.length() > 0)
+                sb.append("\n");
+            sb.append(nextLine);
+        }
+        br.close();
+        return sb.toString();
+    }
+    
+    /**
      * Main method to test snippets.
      * 
      * @param args
@@ -285,6 +306,8 @@ public class Snippets {
 		
 		jsonObj.put("new", "thing");
 		System.out.println ("Snippets.formatJson: " + Snippets.formatJson(jsonObj));		// 13
+		
+		System.out.println ("Snippets.readResource: " + Snippets.readResource("/org/bobmarks/simple/test.properties"));	// 14
         
         file.delete();
     }

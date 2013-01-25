@@ -29,6 +29,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -56,6 +58,19 @@ import org.json.simple.parser.JSONParser;
  */
 public class Snippets {
 
+	/**
+	 * Constructor.
+	 */
+	public Snippets () {}
+	
+	/**
+	 * Test method.
+	 */
+	@SuppressWarnings("unused")
+	private void test () {
+		System.out.println ("Test method");
+	}
+	
     /**
      * 1) Read contents of a file into a String.
      * 
@@ -259,6 +274,25 @@ public class Snippets {
     }
     
     /**
+     * This runs a method with no parameters.
+     * 
+     * @param className
+     * @param methodName
+     * @throws InvocationTargetException 
+     * @throws IllegalAccessException 
+     * @throws IllegalArgumentException 
+     * @throws ClassNotFoundException 
+     * @throws NoSuchMethodException 
+     * @throws SecurityException 
+     */
+    public static void runMethod (Object obj, String methodName) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, ClassNotFoundException, SecurityException, NoSuchMethodException {
+    	Class<?> c = obj.getClass();
+    	Class<?> [] p = new Class<?> [0];
+    	Method  method = c.getDeclaredMethod (methodName, p);
+    	method.invoke (obj, p);
+    }
+    
+    /**
      * Main method to test snippets.
      * 
      * @param args
@@ -308,6 +342,9 @@ public class Snippets {
 		System.out.println ("Snippets.formatJson: " + Snippets.formatJson(jsonObj));		// 13
 		
 		System.out.println ("Snippets.readResource: " + Snippets.readResource("/org/bobmarks/simple/test.properties"));	// 14
+		
+		Snippets snippets = new Snippets ();
+		runMethod(snippets, "test");
         
         file.delete();
     }
